@@ -1,20 +1,103 @@
-// HomeworkS.cpp : This file contains the 'main' function. Program execution begins and ends there.
-//
+﻿#include <iostream>
+#include <Windows.h>
+using namespace std;
+void noDamageDealt(int arr[]);
+void maxDamageDealt(int arr[]);
+void minDamageDealt(int arr[]);
+void healingDealt(int arr[]);
+void allDamageAndHealthDealt(int arr[]);
 
-#include <iostream>
+int main() {
+	SetConsoleCP(1251);
+	SetConsoleOutputCP(1251);
 
-int main()
-{
-    std::cout << "Hello World!\n";
+	int DamageArray[5] = { -2, 5, 2, 0, -7, };
+	noDamageDealt(DamageArray);
+	maxDamageDealt(DamageArray);
+	minDamageDealt(DamageArray);
+	healingDealt(DamageArray);
+	allDamageAndHealthDealt(DamageArray);
+}
+void noDamageDealt(int arr[]) {
+	for (int i = 0; i < 5; i++) {
+		//cout << "Hit " << arr[i] << endl;
+		if (arr[i] == 0)
+		{
+			cout << "No Damage Dealt when " << i << " acted" << endl;
+		}
+
+	}
+}
+void maxDamageDealt(int arr[]) {
+	int max = arr[0];
+	for (int i = 1; i < 5; i++) {
+		if (arr[i] > max) {
+			max = arr[i];
+		}
+	}
+	cout << "Max Damage Dealt Was: " << max << endl;
+}
+void minDamageDealt(int arr[]) {
+	int i = 0;
+	int min = 0;
+	for (; i < 5; i++)
+	{
+
+		if (arr[i] > 0) {
+			min = arr[i];
+
+			break;
+		}
+	}
+	for (; i < 5; i++)
+	{
+		if (arr[i] < min && arr[i] > 0) {
+			min = arr[i];
+		}
+
+	}if (min == 0) {
+		cout << "there was no Damage dealt" << endl;
+		return;
+	}
+	cout << "Min Damage Dealt Was: " << min << endl;
+}
+void healingDealt(int arr[]) {
+	for (int i = 0; i < 5; i++) {
+		//cout << "Hit " << arr[i] << endl;
+		if (arr[i] < 0)
+		{
+			cout << "Healing received: " << arr[i] << endl;
+		}
+
+	}
+}
+void allDamageAndHealthDealt(int arr[]) {
+	int totalDamage = 0;
+
+	for (int i = 0; i < 5; i++) {
+		if (arr[i] > 0) {
+			totalDamage += arr[i];
+
+		}
+
+	}
+	cout << "Total Damage Dealt Was: " << totalDamage << endl;
+	int totalHeal = 0;
+	for (int i = 0; i < 5; i++) {
+		if (arr[i] < 0) {
+			totalHeal += arr[i];
+
+		}
+	}
+	cout << "Total Health Received Was: " << totalHeal << endl;
 }
 
-// Run program: Ctrl + F5 or Debug > Start Without Debugging menu
-// Debug program: F5 or Debug > Start Debugging menu
 
-// Tips for Getting Started: 
-//   1. Use the Solution Explorer window to add/manage files
-//   2. Use the Team Explorer window to connect to source control
-//   3. Use the Output window to see build output and other messages
-//   4. Use the Error List window to view errors
-//   5. Go to Project > Add New Item to create new code files, or Project > Add Existing Item to add existing code files to the project
-//   6. In the future, to open this project again, go to File > Open > Project and select the .sln file
+
+/*Написати програму, яка запитує і запам’ятовує числа, які дорівнюють кількості шкоди(або лікуванню, якщо число від’ємне).
+	Розробити для цих даних функції статистики :
+Під якими номерами нам завдали найбільшу шкоду
+	Під якими номерами нам завдали нам найменше шкоди
+	Під якими номерами нам завдали лікування
+	Скільки всього нам нанесли шкоди / лікування(в параметр функції потрібно передати обраний варіант : лікування, або шкода)
+	Чи є хтось, хто нічого нам не зробив(значення дорівнює нулю)*/
