@@ -7,7 +7,7 @@ void minDamageDealt(int arr[]);
 void healingDealt(int arr[]);
 void allDamageAndHealthDealt(int arr[]);
 
-int main() {
+void Homework2() {
 	SetConsoleCP(1251);
 	SetConsoleOutputCP(1251);
 
@@ -23,7 +23,7 @@ void noDamageDealt(int arr[]) {
 		//cout << "Hit " << arr[i] << endl;
 		if (arr[i] == 0)
 		{
-			cout << "No Damage Dealt when " << i << " acted" << endl;
+			cout << "No Damage Dealt when " << i << " acted" << '\n';
 		}
 
 	}
@@ -35,7 +35,7 @@ void maxDamageDealt(int arr[]) {
 			max = arr[i];
 		}
 	}
-	cout << "Max Damage Dealt Was: " << max << endl;
+	cout << "Max Damage Dealt Was: " << max << '\n';
 }
 void minDamageDealt(int arr[]) {
 	int i = 0;
@@ -56,17 +56,17 @@ void minDamageDealt(int arr[]) {
 		}
 
 	}if (min == 0) {
-		cout << "there was no Damage dealt" << endl;
+		cout << "there was no Damage dealt" << '\n';
 		return;
 	}
-	cout << "Min Damage Dealt Was: " << min << endl;
+	cout << "Min Damage Dealt Was: " << min << '\n';
 }
 void healingDealt(int arr[]) {
 	for (int i = 0; i < 5; i++) {
 		//cout << "Hit " << arr[i] << endl;
 		if (arr[i] < 0)
 		{
-			cout << "Healing received: " << arr[i] << endl;
+			cout << "Healing received: " << arr[i] << '\n';
 		}
 
 	}
@@ -81,7 +81,7 @@ void allDamageAndHealthDealt(int arr[]) {
 		}
 
 	}
-	cout << "Total Damage Dealt Was: " << totalDamage << endl;
+	cout << "Total Damage Dealt Was: " << totalDamage << '\n';
 	int totalHeal = 0;
 	for (int i = 0; i < 5; i++) {
 		if (arr[i] < 0) {
@@ -89,7 +89,7 @@ void allDamageAndHealthDealt(int arr[]) {
 
 		}
 	}
-	cout << "Total Health Received Was: " << totalHeal << endl;
+	cout << "Total Health Received Was: " << totalHeal << '\n';
 }
 
 
